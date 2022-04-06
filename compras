@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    float codigo,quantidade,valor,total,desconto;
+
+    cout << "Digite o codigo do produto de 1 a 40:";
+	cin >> codigo;
+    
+    cout << "\nDigite a quantidade de produto pertencente a este codigo:";
+    cin >> quantidade;
+
+
+                                                                                //VALOR UNITARIO E VALOR TOTAL
+    if (codigo>=1 && codigo <11)
+    { 
+        valor = 10;
+        total = valor * quantidade; 
+        cout << "\nO valor unitário "<< valor <<" e o preço total é: " << total;    
+    }
+    
+    else if (codigo>=11 && codigo<=20)
+    {
+        valor = 15;
+        total = valor * quantidade;
+        cout << "\nO valor unitário "<< valor <<" e o preço total é: " << total;    
+    }
+    
+    else if (codigo>=21 && codigo<=30)
+    {
+        valor = 20;
+        total = valor * quantidade;
+        cout << "\nO valor unitário "<< valor <<" e o preço total é: " << total;       
+    }
+    
+    else if  (codigo>=31 && codigo<=40)
+    {
+        valor = 30;
+        total = valor * quantidade;
+        cout << "\nO valor unitário " << valor << " e o preço total é: " << total;       
+    }
+    
+    else
+    {
+        cout << "\nEsse codigo nao esta cadastrado";
+    }
+    
+                                                                                      //DESCONTO
+    if(valor>=1 && valor<=40 && total>9 )
+    { 
+
+
+        cout << "\nSera efetuado um desconto de acordo com o valor total :)";
+           
+        if (total>=10 && total<=250)
+        {
+            desconto = total * 0.05;
+            cout << "\nDesconto de 5""%"", o valor total é de: " << total - desconto;
+        }
+    
+        else if (total>=251 && total<=499)
+        {
+            desconto = total * 0.1;
+            cout << "\nDesconto de 10""%"", o valor total é de: " << total - desconto;
+        }
+    
+        else if (total>=500)
+        {
+            desconto = total * 0.15;
+            cout << "\nDesconto de 15""%"", o valor total é de: " << total - desconto;
+        }
+    }
+    else
+    {
+    cout << "\nNão será sera subtraido nem um desconto :(";
+    }
+    
+    
+                                                                                       //RELATÓRIO
+    cout << "\n\nNúmero codigo: " << codigo;
+    cout << "\nValor unitário: " << valor;
+    cout << "\nQuantidade solicitada: " << quantidade;
+    cout << "\nValor total: " << total;
+    cout << "\nValor desconto: " << desconto <<"""%""";
+    cout << "\nValor pós desconto: " << total - desconto;
+	return 0;
+}
